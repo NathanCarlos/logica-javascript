@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Compras</title>
+</head>
+
+<body>
+    <form class="lista-form">
+        <div class="form-field">
+            <label for="nomeItem">Digite o nome do item</label>
+            <input type="text" id="nomeItem" maxlength="30">
+        </div>
+        <button id="adicionaItems" type="button" onclick="adicionaItem(nomeItem.value)">Adicionar item</button>
+        <button id="ordenaItems" type="button" onclick="ordenar()">Ordernar</button>
+        <button id="limparLista" type="button" onclick="limpaLista()">Limpar Lista</button>
+    </form>
+    <div class="lista">
+        <ul id="listaCompras"></ul>
+    </div>
+    <script src="./lista-compras.js"></script>
+</body>
+
+</html>
