@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div class="form-field">
+            <label for="idade">Digite a idade</label>
+            <input type="number" id="idade">
+        </div>
+        <div class="form-field">
+            <label for="peso">Digite o peso(kg)</label>
+            <input type="number" id="peso">
+        </div>
+        <div class="form-field">
+            <label for="sexo">Selecione o sexo</label>
+            <select id="sexo">
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+            </select>
+        </div>
+        <button type="button" onclick="adicionaPessoas(idade.value, peso.value, sexo.value)">Adicionar</button>
+    </form>
+    <div>
+        <h4 id="mediaIdadeHomens"></h4>
+        <h4 id="totalHomens"></h4>
+        <h4 id="mediaIdadeMulheres"></h4>
+        <h4 id="totalMulheres"></h4>
+        <ul id="listaPessoas"></ul>
+    </div>
+    <script src="cotrole-pessoas.js"></script>
+</body>
+</html>
