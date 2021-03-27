@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/nav/style-nav.css">
     <link rel="stylesheet" href="./css/container/visualizacaoProdutos/visualizacao-produtos.css">
     <link rel="stylesheet" href="./css/container/cadastroProdutos/cadastro-produtos.css">
+    <script src="./scripts/controle-estoque.js" defer></script>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <nav class="nav-bar">
         <h3 id="nav-titulo">Controle de Estoque</h3>
         <form class="form-busca">
-            <input type="text" class="input-busca" placeholder="Digite o nome de um produto para procurar">
+            <input type="text" id="inputBusca" class="input-busca" placeholder="Digite o nome de um produto para procurar">
             <span class="material-icons busca">
                 search
             </span>
@@ -49,7 +50,8 @@
                 <input type="url" id="linkImagemProduto" placeholder="https://exemplo.com">
             </div>
             <div class="form-acoes">
-                <button class="cadastrarProduto" type="button">Cadastrar</button>
+                <button class="cadastrarProduto" type="button"
+                onclick="adicionaProduto(descricaoProduto, quantidadeProduto, categoriaProduto, linkImagemProduto)">Cadastrar</button>
             </div>
         </form>
     </div>
@@ -57,22 +59,8 @@
     <!-- Visualização de produtos -->
     <h3 class="titulo-produtos">Produtos Cadastrados: </h3>
     <div id="visualizacaoProdutos">
-        <div class="card">
-            <img width="250px" height="250px"
-                src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
-            <div class="descricao-card">
-                <p><b>Notebook Lenovo 8gb ram 1tb hd processador intel core i3</b></p>
-                <p>Quantidade em estoque: <b>10</b></p>
-                <p>Categoria: <b>Informática</b></p>
-            </div>
-            <div class="acoes">
-                <span class="material-icons acao">
-                    delete
-                </span>
-            </div>
-        </div>
-    </div>
 
+    </div>
 </body>
 
 </html>
