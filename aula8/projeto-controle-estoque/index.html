@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Estoque</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/nav/style-nav.css">
+    <link rel="stylesheet" href="./css/container/visualizacaoProdutos/visualizacao-produtos.css">
+    <link rel="stylesheet" href="./css/container/cadastroProdutos/cadastro-produtos.css">
+    <script src="./scripts/controle-estoque.js" defer></script>
+</head>
+
+<body>
+    <!-- Área do navbar -->
+    <nav class="nav-bar">
+        <h3 id="nav-titulo">Controle de Estoque</h3>
+        <!-- <label for="filtroBusca">
+            Busca por:
+            <select id="filtroBusca">
+                <option value="id">Id</option>
+                <option value="descricao">Descrição</option>
+            </select>
+        </label> -->
+        <form class="form-busca">
+            <input type="text" id="inputBusca" class="input-busca" placeholder="Digite o nome de um produto para procurar">
+            <span class="material-icons busca">
+                search
+            </span>
+        </form>
+        <ul id="nav-opcoes">
+            <li><a href="">Login</a></li>
+            <li><a href="">Cadastro</a></li>
+            <li><a href="">Suporte</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cadastro de produtos -->
+    <div id="cadastroProdutos">
+        <h3>Cadastro de produtos</h3>
+        <form id="form-cadastro" class="form-cadastro">
+            <div class="form-field">
+                <label for="descricaoProduto" class="label-input">Descrição do produto:</label>
+                <input id="descricaoProduto" type="text" placeholder="Digite a descrição">
+            </div>
+            <div class="form-field">
+                <label for="quantidadeProduto" class="label-input">Quantidade:</label>
+                <input id="quantidadeProduto" type="number" placeholder="Digite a quantidade">
+            </div>
+            <div class="form-field">
+                <label for="categoriaProduto" class="label-input">Categoria:</label>
+                <input id="categoriaProduto" type="text" placeholder="Digite a categoria">
+            </div>
+            <div class="form-field-img">
+                <label for="linkImagemProduto" class="label-input">Link da Imagem:</label>
+                <input type="url" id="linkImagemProduto" placeholder="https://exemplo.com">
+            </div>
+            <div class="form-acoes">
+                <button class="cadastrarProduto" type="button"
+                onclick="adicionaProduto(descricaoProduto, quantidadeProduto, categoriaProduto, linkImagemProduto)">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Visualização de produtos -->
+    <h3 class="titulo-produtos">Produtos Cadastrados: </h3>
+    <div id="visualizacaoProdutos">
+
+    </div>
+</body>
+
+</html>

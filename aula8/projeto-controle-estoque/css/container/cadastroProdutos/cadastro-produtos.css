@@ -1,0 +1,73 @@
+#cadastroProdutos {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+#cadastroProdutos .form-cadastro {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#cadastroProdutos .form-cadastro input {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    background-color: var(--cor-padrao-background-input);
+    border-bottom: 2px solid var(--cor-padrao-cinza-claro);
+    padding: 10px 0px 10px 0px;
+}
+
+#cadastroProdutos .form-cadastro input:focus {
+    outline: 0;
+}
+
+#cadastroProdutos .form-field {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px 10px 0px;
+    width: 30%;
+}
+
+#cadastroProdutos .form-field .label-input{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#cadastroProdutos .form-field-img {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#cadastroProdutos .form-cadastro .form-acoes {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+}
+
+#cadastroProdutos .form-cadastro .form-acoes button {
+    background-color: #355C7D ;
+    border: none;
+    color: white;
+    padding: 15px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
+#cadastroProdutos .form-cadastro .form-acoes button:hover {
+    color: white;
+    opacity: 1;
+}
+

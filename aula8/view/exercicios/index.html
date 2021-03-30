@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de compras</title>
+    <script src="../../scripts/exercicios/lista-compras.js" defer></script>
+</head>
+<body>
+    <form>
+        <label for="nomeDoItem">Nome do Item</label>
+        <input type="text" id="nomeDoItem" placeholder="Digite o nome">
+        <button id="btnAdicionaItem" type="button" onclick="adicionaItem(nomeDoItem.value)">Adicionar</button>
+        <button type="button" onclick="ordenarLista()">Ordenar</button>
+        <button type="button" onclick="limparLista()">Limpar Lista</button>
+        <button type="button" onclick="removeItem(nomeDoItem.value)">Remove Item</button>
+    </form>
+    <form>
+        <label for="buscaItem">Nome do item</label>
+        <input type="text" id="buscaItem" placeholder="Digite o nome para busca">
+        <button type="button" onclick="buscarItem(buscaItem.value)">Buscar</button>
+        <button type="button" onclick="resetarBusca()">Resetar Busca</button>
+    </form>
+    <h3>Lista de compras: </h3>
+    <ul id="listaCompras"></ul>
+</body>
+</html>
