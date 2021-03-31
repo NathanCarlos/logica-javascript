@@ -1,0 +1,55 @@
+.titulo {
+    padding-left: 10px;
+}
+
+#visualizacao {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 20px;
+}
+
+#visualizacao .card {
+    max-width: 250px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 var(--cor-box-shadow-padrao);
+    border-radius: 5px 5px;
+}
+
+#visualizacao .card:hover {
+    box-shadow: 10px 5px 5px var(--cor-box-shadow-padrao);
+}
+
+#visualizacao .descricao-card {
+    color: var(--cor-padrao-escuro);
+    margin: 20px 10px;
+}
+
+#visualizacao .descricao-card .aprovado {
+    color: var(--cor-padrao-sucesso);
+}
+
+#visualizacao .descricao-card .reprovado {
+    color: var(--cor-aviso-perigo);
+}
+
+#visualizacao .acoes {
+    border-top: 1px solid var(--cor-padrao-cinza-claro);
+    background-color: var(--cor-padrao-cinza-claro-2);
+    color: var(--cor-padrao-neutro);
+    padding: 10px;
+}
+
+#visualizacao .acoes .acao{
+    cursor: pointer;
+    color: var(--cor-aviso-perigo);
+    opacity: 0.8;
+}
+
+#visualizacao .acoes .acao:hover{
+    color: var(--cor-aviso-perigo);
+    opacity: 1;
+}

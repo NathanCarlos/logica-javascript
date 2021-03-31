@@ -1,0 +1,12 @@
+.media-notas {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.media-notas h3 {
+    color: var(--cor-padrao-nav);
+    font-weight: bold;
+}

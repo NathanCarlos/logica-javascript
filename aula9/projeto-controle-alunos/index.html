@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Alunos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/nav/style-nav.css">
+    <link rel="stylesheet" href="./css/container/visualizacao/visualizacao.css">
+    <link rel="stylesheet" href="./css/container/cadastro/cadastro.css">
+    <link rel="stylesheet" href="./css/container/media-notas/media-notas.css">
+</head>
+
+<body>
+    <!-- Área do navbar -->
+    <nav class="nav-bar">
+        <h3 id="nav-titulo">Controle Alunos</h3>
+        <!-- <label for="tipoBusca">
+            Busca por:
+            <select id="tipoBusca">
+                <option value="id">Id</option>
+                <option value="descricao">Descrição</option>
+            </select>
+        </label> -->
+        <form class="form-busca">
+            <input type="text" id="inputBusca" class="input-busca"
+                placeholder="Digite o nome de um aluno para procurar">
+            <span class="material-icons busca">
+                search
+            </span>
+        </form>
+        <ul id="nav-opcoes">
+            <li><a href="">Login</a></li>
+            <li><a href="">Cadastro</a></li>
+            <li><a href="">Suporte</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cadastro de alunos -->
+    <div id="cadastro">
+        <h3>Cadastro de alunos</h3>
+        <form id="form-cadastro" class="form-cadastro">
+            <div class="form-field">
+                <label for="nomeAluno" class="label-input">Nome do aluno:</label>
+                <input id="nomeAluno" type="text" placeholder="Digite a descrição">
+            </div>
+            <div class="form-field">
+                <label for="primeiraNota" class="label-input">Primeira nota:</label>
+                <input id="primeiraNota" type="number" placeholder="Digite a primeira nota">
+            </div>
+            <div class="form-field">
+                <label for="segundaNota" class="label-input">Segunda nota:</label>
+                <input id="segundaNota" type="number" placeholder="Digite a segunda nota">
+            </div>
+            <div class="form-field">
+                <label for="materia" class="label-input">Selecione a matéria:</label>
+                <select id="materia">
+                    <option value="1">Javascript</option>
+                    <option value="2">HTML/CSS</option>
+                    <option value="3">React</option>
+                    <option value="4">Arquitetura</option>
+                </select>
+            </div>
+            <div class="form-acoes">
+                <button class="cadastrarProduto" type="button">Adicionar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Médias -->
+    <h3 class="titulo">Média das notas por matéria: </h3>
+    <div id="mediaNotasAlunos" class="media-notas">
+        <h3>Javascript: 5.5</h3>
+        <h3>HTML/CSS: 0</h3>
+        <h3>Arquitetura: 0</h3>
+        <h3>React: 0</h3>
+    </div>
+
+    <!-- Visualização de alunos -->
+    <h3 class="titulo">Alunos: </h3>
+    <div id="visualizacao">
+        <div class="card">
+            <div class="descricao-card">
+                <p><b>Nathan Carlos Santos Lima</b></p>
+                <p>Nota 1: <b>10</b></p>
+                <p>Nota 2: <b>7</b></p>
+                <p>Matéria: <b>Javascript</b></p>
+                <p>Média Aluno: <b>8.5</b></p>
+                <p>Aprovado: <b class="aprovado">Sim</b></p>
+                <!-- <p>Aprovado: <b class="reprovado">Não</b></p> -->
+            </div>
+            <div class="acoes">
+                <span class="material-icons acao">
+                    delete
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
