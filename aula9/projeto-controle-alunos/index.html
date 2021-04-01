@@ -10,19 +10,22 @@
     <link rel="stylesheet" href="./css/container/visualizacao/visualizacao.css">
     <link rel="stylesheet" href="./css/container/cadastro/cadastro.css">
     <link rel="stylesheet" href="./css/container/media-notas/media-notas.css">
+    <script src="../utilitarios.js" defer></script>
+    <script src="./scripts/controle-alunos.js" defer></script>
 </head>
 
 <body>
     <!-- Área do navbar -->
     <nav class="nav-bar">
         <h3 id="nav-titulo">Controle Alunos</h3>
-        <!-- <label for="tipoBusca">
+        <label for="tipoBusca">
             Busca por:
             <select id="tipoBusca">
                 <option value="id">Id</option>
-                <option value="descricao">Descrição</option>
+                <option value="nome">Nome</option>
+                <option value="materia">Materia</option>
             </select>
-        </label> -->
+        </label>
         <form class="form-busca">
             <input type="text" id="inputBusca" class="input-busca"
                 placeholder="Digite o nome de um aluno para procurar">
@@ -47,23 +50,27 @@
             </div>
             <div class="form-field">
                 <label for="primeiraNota" class="label-input">Primeira nota:</label>
-                <input id="primeiraNota" type="number" placeholder="Digite a primeira nota">
+                <input id="primeiraNota" type="number" min="0" max="10" placeholder="Digite a primeira nota">
             </div>
             <div class="form-field">
                 <label for="segundaNota" class="label-input">Segunda nota:</label>
-                <input id="segundaNota" type="number" placeholder="Digite a segunda nota">
+                <input id="segundaNota" type="number" min="0" max="10" placeholder="Digite a segunda nota">
             </div>
             <div class="form-field">
                 <label for="materia" class="label-input">Selecione a matéria:</label>
                 <select id="materia">
-                    <option value="1">Javascript</option>
-                    <option value="2">HTML/CSS</option>
-                    <option value="3">React</option>
-                    <option value="4">Arquitetura</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="HTML/CSS">HTML/CSS</option>
+                    <option value="React">React</option>
+                    <option value="Arquitetura">Arquitetura</option>
                 </select>
             </div>
             <div class="form-acoes">
-                <button class="cadastrarProduto" type="button">Adicionar</button>
+                <button class="cadastrarProduto" type="button"
+                onclick="adicionaAluno(nomeAluno.value,
+                parseFloat(primeiraNota.value),
+                parseFloat(segundaNota.value),
+                materia.value)">Adicionar</button>
             </div>
         </form>
     </div>
@@ -80,22 +87,6 @@
     <!-- Visualização de alunos -->
     <h3 class="titulo">Alunos: </h3>
     <div id="visualizacao">
-        <div class="card">
-            <div class="descricao-card">
-                <p><b>Nathan Carlos Santos Lima</b></p>
-                <p>Nota 1: <b>10</b></p>
-                <p>Nota 2: <b>7</b></p>
-                <p>Matéria: <b>Javascript</b></p>
-                <p>Média Aluno: <b>8.5</b></p>
-                <p>Aprovado: <b class="aprovado">Sim</b></p>
-                <!-- <p>Aprovado: <b class="reprovado">Não</b></p> -->
-            </div>
-            <div class="acoes">
-                <span class="material-icons acao">
-                    delete
-                </span>
-            </div>
-        </div>
     </div>
 </body>
 
