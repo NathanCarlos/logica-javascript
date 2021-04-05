@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Alunos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/nav/style-nav.css">
+    <link rel="stylesheet" href="./css/container/visualizacao/visualizacao.css">
+    <link rel="stylesheet" href="./css/container/cadastro/cadastro.css">
+    <link rel="stylesheet" href="./css/container/indicadores/indicadores.css">
+    <script src="./utilitarios.js" defer></script>
+</head>
+
+<body>
+    <!-- Área do navbar -->
+    <nav class="nav-bar">
+        <h3 id="nav-titulo">Sistema Acadêmia</h3>
+        <!-- <label for="tipoBusca">
+            Busca por:
+            <select id="tipoBusca">
+                <option value="id">Id</option>
+                <option value="nome">Nome</option>
+                <option value="materia">Materia</option>
+            </select>
+        </label> -->
+        <form class="form-busca">
+            <input type="text" id="inputBusca" class="input-busca"
+                placeholder="Digite um valor para buscar">
+            <span class="material-icons busca">
+                search
+            </span>
+        </form>
+        <ul id="nav-opcoes">
+            <li><a href="">Login</a></li>
+            <li><a href="">Cadastro</a></li>
+            <li><a href="">Suporte</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cadastro de alunos -->
+    <div id="cadastro">
+        <h3>Cadastro de alunos</h3>
+        <form id="form-cadastro" class="form-cadastro">
+            <div class="form-field">
+                <label for="nomeAluno" class="label-input">Nome do aluno:</label>
+                <input id="nomeAluno" type="text" placeholder="Digite a descrição">
+            </div>
+            <div class="form-field">
+                <label for="idade" class="label-input">Idade:</label>
+                <input id="idade" type="number" min="0" max="100" placeholder="Digite a idade">
+            </div>
+            <div class="form-field">
+                <label for="valorMensalidade" class="label-input">Valor da mensalidade:</label>
+                <input id="valorMensalidade" type="number" placeholder="Digite o valor da mensalidade">
+            </div>
+            <div class="form-field">
+                <label for="professorResponsavel" class="label-input">Selecione o Professor Responsável:</label>
+                <select id="professorResponsavel">
+                    <option value="Roberto">Roberto</option>
+                    <option value="Juliana">Juliana</option>
+                    <option value="Roger">Roger</option>
+                    <option value="Vitor">Vitor</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="temAcesso" class="label-input">Acesso permitido:</label>
+                <select id="temAcesso">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+            <div class="form-acoes">
+                <button class="cadastrarProduto" type="button">Salvar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Indicadores -->
+    <h3 class="titulo">Indicadores: </h3>
+    <div id="indicadores">
+        <h3>Total de Alunos: 0</h3>
+        <h3>Média idades: 0</h3>
+        <h3>Total mensalidades: 0</h3>
+        <h3>Média mensalidades: 0</h3>
+    </div>
+
+    <!-- Visualização de alunos -->
+    <h3 class="titulo">Alunos: </h3>
+    <div id="visualizacao">
+        <div class="card">
+            <div class="descricao-card">
+                <p>Nome: <b>Nathan Carlos</b></p>
+                <p>Idade: <b>25</b></p>
+                <p>Exercícios Adaptados: <b>Sim</b></p>
+                <p>Professor Responsável: <b>Roger</b></p>
+                <p>Tem acesso: <span class="nao"><b>Não</b></span></p>
+                <p>Valor mensalidade: <b>R$25</b></p>
+            </div>
+            <div class="acoes">
+                <span class="material-icons acao">
+                    delete
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
