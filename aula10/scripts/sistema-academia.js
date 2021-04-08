@@ -1,7 +1,30 @@
 const divVisualizacao = document.getElementById('visualizacao');
 const divIndicadores = document.getElementById('indicadores');
+const selectTipoBusca = document.getElementById('tipoBusca');
+const inputBusca = document.getElementById('inputBusca');
 const alunos = [];
 let proximoId = 1;
+
+const busca = (event) => {
+    const valor = event.target.value;
+    const listaAlunosFiltrada = alunos.filter(
+        selectTipoBusca.value === 'nome' ?
+        buscaPorNome(valor) :
+        selectTipoBusca.value === 'professor' ?
+        buscaPorProfessor(valor) :
+        selectTipoBusca.value === 'idade' ?
+        buscaPorIdade(parseInt(valor)) :
+        buscaPorId(parseInt(valor))
+    );
+    if (valor && listaAlunosFiltrada.length === 0) {
+        divVisualizacao.innerHTML = '<h3>Item não encontrado<h3>';
+        // alert('Item não encontrado');
+    } else {
+        atualizaListaAlunos(listaAlunosFiltrada);
+    }
+}
+
+inputBusca.addEventListener('keyup', busca);
 
 const adicionaAluno = (nomeAluno,
     idade,
@@ -24,9 +47,11 @@ const adicionaAluno = (nomeAluno,
     atualizaListaAlunos();
 }
 
-const atualizaListaAlunos = () => {
+const atualizaListaAlunos = (listaAlunosFiltrada) => {
     let cards = '';
-    for (aluno of alunos) {
+    const listaAlunos = listaAlunosFiltrada && listaAlunosFiltrada.length > 0 
+    ? listaAlunosFiltrada : alunos;
+    for (aluno of listaAlunos) {
         cards += `
         <div class="card">
             <div class="descricao-card">
@@ -58,10 +83,14 @@ const atualizaIndicadores = () => {
         return `<h3>${titulo}: ${valor}</h3>`;
     }
 
-    for (aluno of alunos) {
+    alunos.forEach((aluno) => {
         somaIdades += aluno.idade;
         somaMensalidades += aluno.valorMensalidade;
-    }
+    });
+    // for (aluno of alunos) {
+        // somaIdades += aluno.idade;
+        // somaMensalidades += aluno.valorMensalidade;
+    // }
 
     h3Indicadores += retornaH3Formatado('Total de Alunos', alunos.length);
     h3Indicadores += retornaH3Formatado('Média idades',
@@ -73,7 +102,18 @@ const atualizaIndicadores = () => {
     divIndicadores.innerHTML = h3Indicadores;
 }
 
+// const buscaPorId = (id) => {
+//     return function (aluno) {
+//         return aluno.id === id;
+//     }
+// }
 const buscaPorId = id => aluno => aluno.id === id;
+const buscaPorNome = nome => 
+    aluno => aluno.nome.toUpperCase().search(nome.toUpperCase()) > -1;
+const buscaPorProfessor = nomeProfessor => 
+    aluno => aluno.professorResponsavel.toUpperCase().search(nomeProfessor.toUpperCase()) > -1;
+const buscaPorIdade = idade =>
+    aluno => aluno.idade === idade;
 
 const removeAluno = (id) => {
     const alunoIndice = alunos.findIndex(buscaPorId(id));
