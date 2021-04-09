@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2</title>
+    <script src="./exercicio2.js" defer></script>
+</head>
+<body>
+    <form>
+        <input type="number" id="idadeMinima" placeholder="Digite a idade mínima"/>
+        <input type="number" id="idadeMaxima" placeholder="Digite a idade máxima"/>
+        <button type="button" 
+        onclick="buscaPorIdades(
+            parseInt(idadeMinima.value),
+            parseInt(idadeMaxima.value))">Buscar</button>
+    </form>
+    <h3>Lista de Usuários com faixa etária:</h3>
+    <ul id="listaUsuarios">
+
+    </ul>
+</body>
+</html>
