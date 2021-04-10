@@ -1,7 +1,16 @@
+// Declaração de elementos
 const divVisualizacao = document.getElementById('visualizacao');
 const divIndicadores = document.getElementById('indicadores');
 const selectTipoBusca = document.getElementById('tipoBusca');
 const inputBusca = document.getElementById('inputBusca');
+const btnSalvar = document.getElementById('btnSalvar');
+const inputNomeAluno = document.getElementById('nomeAluno');
+const inputIdade = document.getElementById('idade');
+const inputValorMensalidade = document.getElementById('valorMensalidade');
+const selectProfessorResponsavel = document.getElementById('professorResponsavel');
+const selectTemAcesso = document.getElementById('temAcesso');
+
+// Declaração de variáveis
 const alunos = [];
 let proximoId = 1;
 
@@ -26,27 +35,52 @@ const busca = (event) => {
 
 inputBusca.addEventListener('keyup', busca);
 
-const adicionaAluno = (nomeAluno,
-    idade,
-    valorMensalidade,
-    professorResponsavel,
-    temAcesso) => {
-
+const adicionaAluno = () => {
+    const idade = parseInt(inputIdade.value);
     const aluno = {
         id: proximoId,
-        nome: nomeAluno,
+        nome: inputNomeAluno.value,
         idade,
         exerciciosAdpatados: idade > 60 ? true : false,
-        valorMensalidade,
-        professorResponsavel,
-        temAcesso,
+        valorMensalidade: parseFloat(inputValorMensalidade.value),
+        professorResponsavel: selectProfessorResponsavel.value,
+        temAcesso: parseInt(selectTemAcesso.value),
     };
 
     alunos.push(aluno);
     proximoId++;
     atualizaListaAlunos();
+    limpaCampos();
 }
 
+const editarAluno = (id) => {
+    const alunoIndice = alunos.findIndex(buscaPorId(id));
+    const idade = parseInt(inputIdade.value);
+    alunos[alunoIndice] = {
+        id,
+        nome: inputNomeAluno.value,
+        idade,
+        exerciciosAdpatados: idade > 60 ? true : false,
+        valorMensalidade: parseFloat(inputValorMensalidade.value),
+        professorResponsavel: selectProfessorResponsavel.value,
+        temAcesso: parseInt(selectTemAcesso.value),
+    }
+    limpaCampos();
+    atualizaListaAlunos();
+    btnSalvar.onclick = adicionaAluno;
+}
+
+btnSalvar.onclick = adicionaAluno;
+
+const carregaDadosAluno = (id) => {
+    const aluno = alunos.find(buscaPorId(id));
+    inputNomeAluno.value = aluno.nome;
+    inputIdade.value = aluno.idade;
+    inputValorMensalidade.value = aluno.valorMensalidade;
+    selectProfessorResponsavel.value = aluno.professorResponsavel;
+    selectTemAcesso.value = aluno.temAcesso ? 1 : 0;
+    btnSalvar.onclick = () => editarAluno(id);
+}
 const atualizaListaAlunos = (listaAlunosFiltrada) => {
     let cards = '';
     const listaAlunos = listaAlunosFiltrada && listaAlunosFiltrada.length > 0 
@@ -65,6 +99,9 @@ const atualizaListaAlunos = (listaAlunosFiltrada) => {
             <div class="acoes">
                 <span class="material-icons acao" onclick="removeAluno(${aluno.id})">
                     delete
+                </span>
+                <span class="material-icons acao" onclick="carregaDadosAluno(${aluno.id})">
+                    edit
                 </span>
             </div>
         </div>
@@ -132,14 +169,10 @@ const atualizaStatusAcesso = (id) => {
     atualizaListaAlunos();
 }
 
-const limpaCampos = (nomeAluno,
-    idade,
-    valorMensalidade,
-    professorResponsavel,
-    temAcesso) => {
-    nomeAluno.value = '';
-    idade.value = '';
-    valorMensalidade.value = '';
-    professorResponsavel.value = '';
-    temAcesso.value = '';
+const limpaCampos = () => {
+    inputNomeAluno.value = '';
+    inputIdade.value = '';
+    inputValorMensalidade.value = '';
+    selectProfessorResponsavel.value = '';
+    selectTemAcesso.value = '';
 }
