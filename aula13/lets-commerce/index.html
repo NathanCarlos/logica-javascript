@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Alunos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/nav/style-nav.css">
+    <link rel="stylesheet" href="./css/container/visualizacao/visualizacao.css">
+    <link rel="stylesheet" href="./css/container/cadastro/cadastro.css">
+    <link rel="stylesheet" href="./css/container/indicadores/indicadores.css">
+    <link rel="stylesheet" href="./css/modal/modal.css">
+    <script src="./scripts/utilitarios.js" defer></script>
+    <script src="./scripts/modal/modal.js" defer></script>
+    <script src="./scripts/lets-commerce/lets-commerce.js" defer></script>
+</head>
+
+<body>
+    <!-- Área do navbar -->
+    <nav class="nav-bar">
+        <h3 id="nav-titulo">Lets Commerce</h3>
+        <form class="form-busca">
+            <input type="text" id="inputBusca" class="input-busca" placeholder="Digite um valor para buscar">
+            <span class="material-icons busca">
+                search
+            </span>
+        </form>
+        <ul id="nav-opcoes">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Cadastro</a></li>
+            <li><a href="#">Suporte</a></li>
+            <li><a href="#"></a>Cadastro de Produtos</li>
+            <li><a href="#" onclick="abrirModal('modal')">Carrinho</a></li>
+        </ul>
+    </nav>
+
+    <!-- Visualização de produtos -->
+    <div id="visualizacaoProdutos" class="visualizacao">
+        <div class="card">
+            <img width="250px" height="250px"
+                src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+            <div class="descricao-card">
+                <p><b>Notebook S51</b></p>
+                <h3>R$5000,00</h3>
+                <p><b>10x sem juros de R$500,00</b></p>
+                <p><b>ou R$4670,00 no boleto</b></p>
+            </div>
+            <div class="acoes adicionar-ao-carrinho">
+                <span class="material-icons">
+                    shopping_cart
+                </span>
+                Adicionar ao carrinho
+            </div>
+        </div>
+        <div class="card">
+            <img width="250px" height="250px"
+                src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+            <div class="descricao-card">
+                <p><b>Notebook S51</b></p>
+                <h3>R$5000,00</h3>
+                <p><b>10x sem juros de R$500,00</b></p>
+                <p><b>ou R$4670,00 no boleto</b></p>
+            </div>
+            <div class="acoes adicionar-ao-carrinho">
+                <span class="material-icons">
+                    shopping_cart
+                </span>
+                Adicionar ao carrinho
+            </div>
+        </div>
+        <div class="card">
+            <img width="250px" height="250px"
+                src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+            <div class="descricao-card">
+                <p><b>Notebook S51</b></p>
+                <h3>R$5000,00</h3>
+                <p><b>10x sem juros de R$500,00</b></p>
+                <p><b>ou R$4670,00 no boleto</b></p>
+            </div>
+            <div class="acoes adicionar-ao-carrinho">
+                <span class="material-icons">
+                    shopping_cart
+                </span>
+                Adicionar ao carrinho
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="material-icons fechar-modal" onclick="fecharModal('modal')">
+                close
+            </span>
+            <div class="modal-header">
+                <h3>Carrinho</h3>
+            </div>
+
+            <div class="modal-body">
+                <div id="visualizacaoModal" class="visualizacao">
+                    <div class="card">
+                        <img width="250px" height="250px"
+                            src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+                        <div class="descricao-card">
+                            <p><b>Notebook S51</b></p>
+                            <p>Valor: <b>R$1500,00</b></p>
+                            <div class="quantidade-produtos">
+                                <span>Quantidade:</span>
+                                <span class="material-icons adicao">
+                                    add
+                                </span>
+                                <span><b>1</b></span>
+                                <span class="material-icons remocao">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        <div class="acoes">
+                            <span class="material-icons acao">
+                                delete
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img width="250px" height="250px"
+                            src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+                        <div class="descricao-card">
+                            <p><b>Notebook S51</b></p>
+                            <p>Valor: <b>R$1500,00</b></p>
+                            <div class="quantidade-produtos">
+                                <span>Quantidade:</span>
+                                <span class="material-icons adicao">
+                                    add
+                                </span>
+                                <span><b>1</b></span>
+                                <span class="material-icons remocao">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        <div class="acoes">
+                            <span class="material-icons acao">
+                                delete
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img width="250px" height="250px"
+                            src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+                        <div class="descricao-card">
+                            <p><b>Notebook S51</b></p>
+                            <p>Valor: <b>R$1500,00</b></p>
+                            <div class="quantidade-produtos">
+                                <span>Quantidade:</span>
+                                <span class="material-icons adicao">
+                                    add
+                                </span>
+                                <span><b>1</b></span>
+                                <span class="material-icons remocao">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        <div class="acoes">
+                            <span class="material-icons acao">
+                                delete
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img width="250px" height="250px"
+                            src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+                        <div class="descricao-card">
+                            <p><b>Notebook S51</b></p>
+                            <p>Valor: <b>R$1500,00</b></p>
+                            <div class="quantidade-produtos">
+                                <span>Quantidade:</span>
+                                <span class="material-icons adicao">
+                                    add
+                                </span>
+                                <span><b>1</b></span>
+                                <span class="material-icons remocao">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        <div class="acoes">
+                            <span class="material-icons acao">
+                                delete
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img width="250px" height="250px"
+                            src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+                        <div class="descricao-card">
+                            <p><b>Notebook S51</b></p>
+                            <p>Valor: <b>R$1500,00</b></p>
+                            <div class="quantidade-produtos">
+                                <span>Quantidade:</span>
+                                <span class="material-icons adicao">
+                                    add
+                                </span>
+                                <span><b>1</b></span>
+                                <span class="material-icons remocao">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        <div class="acoes">
+                            <span class="material-icons acao">
+                                delete
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img width="250px" height="250px"
+                            src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+                        <div class="descricao-card">
+                            <p><b>Notebook S51</b></p>
+                            <p>Valor: <b>R$1500,00</b></p>
+                            <div class="quantidade-produtos">
+                                <span>Quantidade:</span>
+                                <span class="material-icons adicao">
+                                    add
+                                </span>
+                                <span><b>1</b></span>
+                                <span class="material-icons remocao">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        <div class="acoes">
+                            <span class="material-icons acao">
+                                delete
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img width="250px" height="250px"
+                            src="https://images.samsung.com/is/image/samsung/br-notebook-style-s51-np730xbe-kp1br-np730xbe-kp1br-fronttitanumsilver-185313138?$720_576_PNG$">
+                        <div class="descricao-card">
+                            <p><b>Notebook S51</b></p>
+                            <p>Valor: <b>R$1500,00</b></p>
+                            <div class="quantidade-produtos">
+                                <span>Quantidade:</span>
+                                <span class="material-icons adicao">
+                                    add
+                                </span>
+                                <span><b>1</b></span>
+                                <span class="material-icons remocao">
+                                    remove
+                                </span>
+                            </div>
+                        </div>
+                        <div class="acoes">
+                            <span class="material-icons acao">
+                                delete
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <h3 id="totalCarrinho">Total: R$ 2500,00</h3>
+                <button type="button">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

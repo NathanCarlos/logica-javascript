@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios fixação Map</title>
+    <script src="./fixacao-map-2.js" defer></script>
+</head>
+<body>
+    <form>
+        <input type="number" id="precoMinimo" placeholder="Preço Mínimo">
+        <input type="number" id="precoMaximo" placeholder="Preço Máximo">
+        <button 
+        type="button"
+        onclick="realizaBusca(parseFloat(precoMinimo.value), parseFloat(precoMaximo.value))">Buscar</button>
+    </form>
+    <ul id="listaProdutos"></ul>
+</body>
+</html>

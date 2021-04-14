@@ -1,0 +1,69 @@
+.modal {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.modal-content {
+    margin: 0 auto;
+    margin-top: 3%;
+    max-width: 850px;
+    background-color: #eee;
+    padding: 0;
+    box-shadow: 0 0 2px #fff;
+}
+
+.modal-header h1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-header, .modal-body, .modal-footer {
+    padding: 10px;
+}
+
+.modal-header {
+    background-color: var(--cor-padrao-cinza-claro-2);
+}
+
+.modal-footer {
+    background-color: var(--cor-padrao-cinza-claro-2);
+}
+
+.modal-footer button {
+    width: 100%;
+    background-color: var(--cor-padrao-botao) ;
+    border: none;
+    color: white;
+    padding: 15px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
+.modal-footer button:hover {
+    opacity: 1;
+}
+
+.fechar-modal {
+    color: var(--cor-padrao-nav-hover);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 5px;
+}
+
+.modal-body .visualizacao {
+    height: 600px;
+    overflow: auto;
+    justify-content: space-evenly;
+}
