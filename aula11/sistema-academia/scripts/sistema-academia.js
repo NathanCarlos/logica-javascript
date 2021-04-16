@@ -114,16 +114,16 @@ const atualizaListaAlunos = (listaAlunosFiltrada) => {
 
 const atualizaIndicadores = () => {
     let h3Indicadores = '';
-    let somaIdades = 0;
-    let somaMensalidades = 0;
+    const somaIdades = alunos.reduce((acc, aluno) => acc + aluno.idade);
+    const somaMensalidades = alunos.reduce((acc, aluno) => acc + aluno.valorMensalidade);
     const retornaH3Formatado = (titulo, valor) => {
         return `<h3>${titulo}: ${valor}</h3>`;
     }
 
-    alunos.forEach((aluno) => {
-        somaIdades += aluno.idade;
-        somaMensalidades += aluno.valorMensalidade;
-    });
+    // alunos.forEach((aluno) => {
+    //     somaIdades += aluno.idade;
+    //     somaMensalidades += aluno.valorMensalidade;
+    // });
     // for (aluno of alunos) {
         // somaIdades += aluno.idade;
         // somaMensalidades += aluno.valorMensalidade;
