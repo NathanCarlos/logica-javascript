@@ -60,3 +60,48 @@ const produtos = [
         preco: 400
     }
 ];
+
+const pocentagemDescontoBoleto = 10;
+const numeroParcelasPadrao = 10;
+
+const atualizaListaProdutos = (listaProdutos) => {
+    let cards = '';
+    const produtosSemMap = listaProdutos && listaProdutos.length > 0 ? listaProdutos : produtos;
+    const produtosMapeados = produtosSemMap.map((produto) => ({
+        ...produto,
+        precoComDescontoBoleto: aplicaDesconto(produto.preco, pocentagemDescontoBoleto),
+        precoParcelado: calcular(dividir, produto.preco, numeroParcelasPadrao)
+    }));
+    for (produto of produtosMapeados) {
+        cards += `
+        <div class="card">
+            <img width="250px" height="250px"
+                src="${produto.imagem}">
+            <div class="descricao-card">
+                <p><b>${produto.descricao}</b></p>
+                <h3>R$${produto.preco}</h3>
+                <p><b>10x sem juros de R$${produto.precoParcelado}</b></p>
+                <p><b>ou R$${produto.precoComDescontoBoleto} no boleto</b></p>
+            </div>
+            <div class="acoes adicionar-ao-carrinho" onclick="adicionaProdutoCarrinho(${produto.id})">
+                <span class="material-icons">
+                    shopping_cart
+                </span>
+                Adicionar ao carrinho
+            </div>
+        </div>
+        `;
+    }
+    setaVisualizacaoProdutos(cards);
+}
+
+atualizaListaProdutos();
+
+const buscaProdutosPorDescricao = descricao => produto => produto.descricao.toUpperCase().search(descricao.toUpperCase()) > -1;
+const buscaProdutoPorId = id => produto => produto.id === id;
+
+inputBusca.addEventListener('keyup', (event) => {
+    const valor = event.target.value;
+    const produtosFiltrados = produtos.filter(buscaProdutosPorDescricao(valor));
+    atualizaListaProdutos(produtosFiltrados);
+});
