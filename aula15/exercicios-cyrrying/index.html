@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios Currying</title>
+    <script src="./utilitarios.js" defer></script>
+    <script src="./exercicios-currying.js" defer></script>
+</head>
+<body>
+    <form>
+        <input type="number" id="numero1" placeholder="Digite o primeiro número">
+        <input type="number" id="numero2" placeholder="Digite o segundo número">
+        <button type="button" onclick="adicionarNumero(
+            parseFloat(numero1.value),
+            parseFloat(numero2.value)
+        )">Adicionar</button>
+    </form>
+    <ul id="numerosComValores"></ul>
+</body>
+</html>
