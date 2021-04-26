@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./exemplo-form-regex.js" defer></script>
+    <style>
+        .erro {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <input type="text" id="nome" placeholder="Digite seu nome">
+            <p id="nomeInvalido" class="erro">Nome inválido, digite novamente!</p>
+        </div>
+        <div>
+            <input type="email" id="email" placeholder="Digite seu email">
+            <p id="emailInvalido" class="erro">Email inválido, digite novamente!</p>
+        </div>
+        <div>
+            <input type="cpf" id="cpf" placeholder="Digite seu cpf">
+        </div>
+        <button type="button" onclick="enviar(nome.value, email.value)">Enviar</button>
+    </form>
+</body>
+</html>

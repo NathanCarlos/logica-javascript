@@ -54,4 +54,10 @@ const sobreNome = 'Teste Novo';
 
 console.log(nome.concat(' ', sobreNome));
 
+const senha = 'teste1234';
 
+let senhaMascarada = '';
+
+senhaMascarada = senhaMascarada.padStart(senha.length, '*');
+
+console.log(senhaMascarada);
