@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Recursos Humanos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/nav/style-nav.css">
+    <link rel="stylesheet" href="./css/container/visualizacao/visualizacao.css">
+    <link rel="stylesheet" href="./css/container/cadastro/cadastro.css">
+    <link rel="stylesheet" href="./css/container/indicadores/indicadores.css">
+    <script src="./scripts/moment.js" defer></script>
+    <script src="./scripts/validadores.js" defer></script>
+    <script src="./scripts/utilitarios.js" defer></script>
+    <script src="./scripts/manipula-elementos.js" defer></script>
+    <script src="./scripts/recursos-humanos.js" defer></script>
+</head>
+
+<body>
+    <!-- Área do navbar -->
+    <nav class="nav-bar">
+        <h3 id="nav-titulo">Sistema de Recursos Humanos</h3>
+        <label for="tipoBusca">
+            Busca por:
+            <select id="tipoBusca">
+                <option value="id">Id</option>
+                <option value="nome">Nome</option>
+                <option value="cargo">Cargo</option>
+                <option value="dataAdmissao">Data Admissão Maior</option>
+            </select>
+        </label>
+        <form class="form-busca">
+            <input type="text" id="inputBusca" class="input-busca" placeholder="Digite um valor para buscar">
+            <span class="material-icons busca">
+                search
+            </span>
+        </form>
+        <ul id="nav-opcoes">
+            <li><a href="">Login</a></li>
+            <li><a href="">Cadastro</a></li>
+            <li><a href="">Suporte</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cadastro de colaboradores -->
+    <div id="cadastro">
+        <h3>Cadastro de colaboradores</h3>
+        <form id="form-cadastro" class="form-cadastro">
+            <div class="form-field">
+                <label for="nome" class="label-input">(*)Nome do colaborador:</label>
+                <input id="nome" type="text" placeholder="Digite o nome">
+                <p class="erro mt-3" id="nomeInvalido">Nome inválido!</p>
+            </div>
+            <div class="form-field">
+                <label for="email" class="label-input">(*)Email do colaborador:</label>
+                <input id="email" type="text" placeholder="Digite o nome">
+                <p class="erro mt-3" id="emailInvalido">Email inválido!</p>
+            </div>
+            <div class="form-field">
+                <label for="idade" class="label-input">(*)Idade:</label>
+                <input id="idade" type="number" min="0" max="100" placeholder="Digite a idade">
+            </div>
+            <div class="form-field">
+                <label for="cargo" class="label-input">(*)Cargo do colaborador:</label>
+                <input id="cargo" type="text" placeholder="Digite o cargo">
+            </div>
+            <div class="form-field">
+                <label for="salario" class="label-input">(*)Valor do salário:</label>
+                <input id="salario" type="number" placeholder="Digite o valor do salário">
+            </div>
+            <div class="form-field">
+                <label for="dataAdmissao" class="label-input">(*)Selecione a data de admissão:</label>
+                <input id="dataAdmissao" type="date">
+            </div>
+            <div class="form-field">
+                <label for="dataDemissao" class="label-input">Selecione a data de demissão:</label>
+                <input id="dataDemissao" type="date">
+            </div>
+            <div class="form-acoes">
+                <button id="btnSalvar"
+                class="cadastrarProduto"
+                type="button">Salvar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Indicadores -->
+    <!-- <h3 class="titulo">Indicadores: </h3>
+    <div id="indicadores">
+
+    </div> -->
+
+    <!-- Visualização de colaboradores -->
+    <h3 class="titulo">Colaboradores: </h3>
+    <div id="visualizacao">
+    </div>
+</body>
+
+</html>

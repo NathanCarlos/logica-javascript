@@ -1,0 +1,12 @@
+#indicadores {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+#indicadores h3 {
+    color: var(--cor-padrao-nav);
+    font-weight: bold;
+}
